@@ -3,6 +3,7 @@
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
+use Monolog\Handler\TestHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 
 return [
@@ -121,6 +122,12 @@ return [
         'null' => [
             'driver' => 'monolog',
             'handler' => NullHandler::class,
+        ],
+
+        'testing' => [
+            'driver' => 'monolog',
+            'level' => 'debug',
+            'handler' => TestHandler::class,
         ],
 
         'emergency' => [
